@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .alert {
+        @apply sm:rounded-xl rounded-md sm:p-4 p-2;
+    }
+    
+    .alert-body {
+        @apply flex items-center sm:font-medium font-normal md:text-base sm:text-sm text-xs;
+    }
+
+    .badge {
+        @apply rounded-full sm:px-3 px-1.5 sm:py-0.5 py-0 sm:text-base text-sm;
+    }
+
+    .breadcrumb {
+        @apply flex items-center space-x-3 sm:space-x-8 sm:px-5 px-3 sm:py-2.5 py-1.5 sm:rounded-md rounded;
+    }
+
+    .breadcrumb-item {
+        @apply inline-flex items-center gap-1;
+    }
+
+    .breadcrumb-text {
+        @apply ml-1 sm:text-base text-sm sm:font-medium font-normal;
+    }
+
+    .btn {
+        @apply inline-block sm:px-6 px-4 sm:py-2.5 py-1.5 sm:rounded-lg rounded-md sm:font-medium font-normal transition duration-200 hover:scale-95;
+    }
+
+    .btn-icon {
+        @apply inline-flex items-center gap-3;
+    }
+
+    .card {
+        @apply flex flex-col;
+    }
+
+    .card-image {
+        @apply w-full;
+    }
+    
+    .card-title {
+        @apply text-2xl font-bold;
+    }
+
+    .card-footer {
+        @apply flex items-center justify-between mt-3;
+    }
+
+    .form-control {
+        @apply my-4 flex flex-col;
+    }
+    
+    .form-horizontal {
+        @apply my-4 md:grid md:grid-cols-12 md:items-center flex flex-col;
+    }
+    
+    .form-label {
+        @apply md:mb-1.5;
+    }
+    
+    .form-label-check {
+        @apply ml-2 cursor-pointer;
+    }
+
+    .form-input {
+        @apply rounded-lg border border-gray-300 px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-gray-400 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400;
+    }
+
+    .form-radio {
+        @apply transition duration-200 cursor-pointer w-4 h-4 rounded-full;
+    }
+    
+    .form-check {
+        @apply w-4 h-4 transition duration-200 cursor-pointer;
+    }
+
+    .form-search {
+        @apply my-4 relative block;
+    }
+
+    .search-icon {
+        @apply absolute inset-y-0 left-0 flex items-center pl-2 text-gray-300;
+    }
+    
+    .search-input {
+        @apply w-full pl-9 pr-3 rounded-lg border border-gray-300 px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-gray-400 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none;
+    }
+    
+    .form-group {
+        @apply flex items-center;
+    }
+    
+    .group-text {
+        @apply px-4 py-1.5 bg-slate-300 border border-slate-300;
+    }
+    
+    .group-input {
+        @apply w-full px-3.5 py-1.5 border-t border-b border-gray-300 focus:outline-none focus:ring focus:ring-gray-400 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed;
+    }
+
+    .navbar {
+        @apply flex items-center justify-between py-4 md:px-20 px-5 mx-auto;
+    }
+    
+    .nav-brand {
+        @apply text-2xl font-bold text-gray-800;
+    }
+    
+    .nav-link {
+        @apply flex items-center gap-10 text-gray-500;
+    }
+    
+    .nav-item {
+        @apply hover:text-gray-800;
+    }
+
+    .hero {
+        @apply grid md:grid-cols-2 grid-cols-1 gap-8;
+    }
+    
+    .hero-text {
+        @apply self-center md:text-left text-center;
+    }
+    
+    .hero-screen {
+        @apply min-h-screen flex;
+    }
+    
+    .hero-content {
+        @apply m-auto text-center md:px-0;
+    }
+}

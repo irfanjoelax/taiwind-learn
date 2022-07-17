@@ -1,0 +1,366 @@
+<!doctype html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Logo Favicon in Tab Bar Browser -->
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+
+    <!-- Title in Tab Bar Browser -->
+    <title>Tailshop | Your Shopping Buddy</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Tailwind CSS  -->
+    <link href="css/output.css" rel="stylesheet">
+</head>
+
+<body class="text-dark dark:bg-dark dark:text-light">
+
+    <!-- Navbar: untuk desktop -->
+    <nav class="container sm:flex hidden items-center justify-between my-4">
+        <div class="flex items-center gap-8">
+            <!-- navbar brand -->
+            <div class="flex items-center gap-2">
+                <img src="img/logo.svg" class="w-10">
+                <h4 class="font-black text-primary">Tailshop.</h4>
+            </div>
+
+            <!-- navbar menu -->
+            <div class="flex items-center gap-7 tracking-wider">
+                <a href="index.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-fire-flame-curved"></i> Home
+                </a>
+                <a href="categories.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-list-ul"></i> Categories
+                </a>
+                <a href="product.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-shirt"></i> Product
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar for auth and cart -->
+        <div class="flex items-center gap-5">
+            <a href="login.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Log in
+            </a>
+            <a href="register.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+            <a href="cart.html"
+                class="bg-primary text-light flex items-center gap-4 px-6 py-2 rounded-lg transition duration-200 hover:scale-95">
+                <div class="flex bg-light rounded-full p-2 text-dark">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                0 Items
+            </a>
+            <button onclick="switchTheme()" id="switchThemeDesktop"
+                class="switchTheme bg-light text-primary px-4 py-3 rounded-lg transition duration-200 hover:scale-95"></button>
+        </div>
+    </nav>
+
+    <!-- Navbar: untuk mobile -->
+    <nav class="sm:hidden block">
+        <!-- navbar brand -->
+        <div class="container flex items-center justify-between gap-2 my-4">
+            <div class="flex items-center gap-2">
+                <img src="img/logo.svg" class="w-10">
+                <h4 class="font-black text-primary">Tailshop.</h4>
+            </div>
+            <button onclick="switchTheme()" id="switchThemeMobile"
+                class="bg-light text-primary px-3 py-2 rounded-lg transition duration-200 hover:scale-95"></button>
+        </div>
+
+        <!-- navbar menu -->
+        <div class="fixed bottom-0 bg-light dark:bg-primary py-2.5 w-full rounded-t-lg shadow-md">
+            <div class="flex items-center justify-around text-sm">
+                <a href="index.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <small>Home</small>
+                </a>
+                <a href="categories.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <small>Categories</small>
+                </a>
+                <a href="product.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-shirt"></i>
+                    <small>Products</small>
+                </a>
+                <a href="cart.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <small>Cart Shop</small>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="min-h-screen bg-scroll" style="background-image: url('img/cloudy.svg');">
+        <div class="container text-center sm:py-28 py-40 sm:space-y-20 space-y-10">
+            <h1 class="font-black tracking-wider capitalize">
+                Get your dream Product
+                <br>
+                with <span class="text-primary" id="title"></span>
+            </h1>
+            <div class="relative flex items-center sm:px-32 px-0">
+                <input class="w-full px-3 py-2 border-2 border-primary outline-none rounded-lg shadow-xl" type="search"
+                    placeholder="Search product">
+                <button type="submit" class="absolute sm:right-32 right-0 mr-3">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Available Categories Section -->
+    <section class="container sm:mb-16 mb-20">
+        <div class="text-center">
+            <h2 class="font-bold capitalize">available categories</h2>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        </div>
+        <div class="mt-14 grid md:grid-cols-6 sm:grid-cols-4 grid-cols-2 md:gap-8 sm:gap-7 gap-6">
+            <a data-aos="fade-down" data-aos-duration="100" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/women-bag.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">women's bag</span>
+            </a>
+            <a data-aos="fade-down" data-aos-duration="200" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/men-bag.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">men's bag</span>
+            </a>
+            <a data-aos="fade-down" data-aos-duration="300" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/shoes.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">shoes</span>
+            </a>
+            <a data-aos="fade-down" data-aos-duration="400" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/tshirt.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">T-shirt</span>
+            </a>
+            <a data-aos="fade-down" data-aos-duration="500" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/watch.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">watch</span>
+            </a>
+            <a data-aos="fade-down" data-aos-duration="600" href=""
+                class="bg-light rounded-xl p-3 flex flex-col items-center space-y-5 hover:shadow-lg">
+                <img src="img/hat.png" class="w-14">
+                <span class="capitalize font-semibold dark:text-dark">Hat</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- why trust us section -->
+    <section class="bg-light dark:bg-dark py-10 sm:mb-16 mb-20">
+        <div class="text-center mb-10">
+            <h2 class="font-bold capitalize">
+                why trust us?
+            </h2>
+        </div>
+        <div class="container grid sm:grid-cols-3 grid-cols-1 sm:gap-8 gap-3">
+            <div class="space-y-5 flex flex-col sm:items-start items-center">
+                <img src="img/customer-service.png" class="w-20 p-2">
+                <div class="sm:text-left text-center">
+                    <h6 class="text-primary font-bold">Customer Care</h6>
+                    <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, pariatur?
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-5 flex flex-col sm:items-start items-center">
+                <img src="img/easy-payment.png" class="w-20 p-2">
+                <div class="sm:text-left text-center">
+                    <h6 class="text-primary font-bold">Easy Payment</h6>
+                    <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, pariatur?
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-5 flex flex-col sm:items-start items-center">
+                <img src="img/fast-delivery.png" class="w-20 p-2">
+                <div class="sm:text-left text-center">
+                    <h6 class="text-primary font-bold">Fast Delivery</h6>
+                    <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, pariatur?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- how to pay section -->
+    <section class="container sm:mb-16 mb-20 grid md:grid-cols-3 grid-cols-1 gap-5">
+        <div class="sm:col-span-2 col-span-1 sm:p-10 p-5">
+            <h2 class="font-bold tracking-wider capitalize">how to pay?</h2>
+            <div class="flex items-center space-x-5 space-y-5">
+                <div>
+                    <span class="bg-primary text-light p-3 rounded-xl font-bold">01</span>
+                </div>
+                <div>
+                    <h5 class="font-bold">Lorem, ipsum dolor.</h5>
+                    <small>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta eius libero iure voluptate amet
+                        adipisci, ex molestiae ab vitae ipsum atque, officia excepturi neque eveniet!
+                    </small>
+                </div>
+            </div>
+            <div class="flex items-center space-x-5 space-y-5">
+                <div class="flex">
+                    <span class="bg-primary text-light p-3 rounded-xl font-bold">02</span>
+                </div>
+                <div>
+                    <h5 class="font-bold">Lorem, ipsum dolor.</h5>
+                    <small>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta eius libero iure voluptate amet
+                        adipisci, ex molestiae ab vitae ipsum atque, officia excepturi neque eveniet!
+                    </small>
+                </div>
+            </div>
+            <div class="flex items-center space-x-5 space-y-5">
+                <div>
+                    <span class="bg-primary text-light p-3 rounded-xl font-bold">03</span>
+                </div>
+                <div>
+                    <h5 class="font-bold">Lorem, ipsum dolor.</h5>
+                    <small>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta eius libero iure voluptate amet
+                        adipisci, ex molestiae ab vitae ipsum atque, officia excepturi neque eveniet!
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 w-full flex">
+            <img src="img/payment.svg" class="w-full m-auto">
+        </div>
+    </section>
+
+    <!-- Footer hanya akan tampil khusus pada layar desktop -->
+    <footer class="container mb-5 space-y-5 tracking-wider rounded-t-xl sm:block hidden">
+        <ul class="flex justify-center space-x-7">
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Home</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Categories</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Products</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Login</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Signup</a>
+            </li>
+        </ul>
+        <div class="flex justify-center space-x-7 text-2xl">
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-instagram-square"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <small class="text-center block">
+            &copy; 2022 <span class="text-primary font-bold">Tailshop</span>, All Rights Reserved.
+        </small>
+    </footer>
+
+    <!-- Button Back Top -->
+    <a href="#" id="btnBackTop"
+        class="bg-primary text-light rounded-full p-3 fixed sm:bottom-5 bottom-20 right-5 animate-bounce">
+        <i class="fa-solid fa-up-long"></i>
+    </a>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 50,
+            duration: 800,
+            easing: 'linear',
+        });
+    </script>
+
+    <!-- GSAP JS Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <!-- GSAP Extra Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(TextPlugin); // regisiter plugin text
+        gsap.to('#title', { duration: 2, text: "Tailshop." }); // init animation text
+    </script>
+
+    <!-- Button Back Top -->
+    <script>
+        // inisalisasi tombol dengan id = btnBackTop
+        window.onload = function () {
+            btnBackTop = document.getElementById("btnBackTop");
+            btnBackTop.style.display = "none";
+        }
+
+        // ketika user scroll website dengan jarak 350px, maka tamplikan tombol btnBackTop
+        window.onscroll = function () {
+            if (document.documentElement.scrollTop > 350) {
+                btnBackTop.style.display = "inline-block";
+            } else {
+                btnBackTop.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Dark Mode -->
+    <script>
+        // Tombol toggle untuk mengaktifkan mode dark atau light
+        var switchThemeDesktop = document.getElementById('switchThemeDesktop');
+        var switchThemeMobile = document.getElementById('switchThemeMobile');
+
+        // validasi ketika di load apakah tema yang tersimpan di local storage browser kamu tema dark atau light
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+            switchThemeDesktop.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            switchThemeMobile.innerHTML = '<i class="fa-solid fa-sun"></i>';
+
+        } else {
+            document.documentElement.classList.remove('dark')
+            switchThemeDesktop.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            switchThemeMobile.innerHTML = '<i class="fa-solid fa-moon"></i>';
+
+        }
+
+        function switchTheme() {
+            let htmlClasses = document.querySelector('html').classList;
+
+            if (localStorage.theme == 'dark') {
+                htmlClasses.remove('dark');
+                localStorage.removeItem('theme')
+                switchThemeDesktop.innerHTML = '<i class="fa-solid fa-moon"></i>'
+                switchThemeMobile.innerHTML = '<i class="fa-solid fa-moon"></i>'
+            } else {
+                htmlClasses.add('dark');
+                localStorage.theme = 'dark';
+                switchThemeDesktop.innerHTML = '<i class="fa-solid fa-sun"></i>'
+                switchThemeMobile.innerHTML = '<i class="fa-solid fa-sun"></i>'
+            }
+        };
+    </script>
+</body>
+
+</html>

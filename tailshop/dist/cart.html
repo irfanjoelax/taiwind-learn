@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Logo Favicon in Tab Bar Browser -->
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+
+    <!-- Title in Tab Bar Browser -->
+    <title>Tailshop | Your Shopping Buddy</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Tailwind CSS  -->
+    <link href="css/output.css" rel="stylesheet">
+</head>
+
+<body class="text-dark">
+
+    <!-- Navbar: untuk desktop -->
+    <nav class="container sm:flex hidden items-center justify-between my-4">
+        <div class="flex items-center gap-8">
+            <!-- navbar brand -->
+            <div class="flex items-center gap-2">
+                <img src="img/logo.svg" class="w-10">
+                <h4 class="font-black text-primary">Tailshop.</h4>
+            </div>
+
+            <!-- navbar menu -->
+            <div class="flex items-center gap-7 tracking-wider">
+                <a href="index.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-fire-flame-curved"></i> Home
+                </a>
+                <a href="categories.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-list-ul"></i> Categories
+                </a>
+                <a href="product.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-shirt"></i> Product
+                </a>
+            </div>
+        </div>
+
+        <!-- navbar for auth and cart -->
+        <div class="flex items-center gap-5">
+            <a href="login.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Log in
+            </a>
+            <a href="register.html" class="hover:text-primary hover:font-bold flex items-center gap-2">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+            <a href="cart.html"
+                class="bg-primary text-light flex items-center gap-4 px-6 py-2 rounded-lg transition duration-200 hover:scale-95">
+                <div class="flex bg-light rounded-full p-2 text-dark">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                0 Items
+            </a>
+        </div>
+    </nav>
+
+    <!-- Navbar: untuk mobile -->
+    <nav class="sm:hidden inline-block">
+        <!-- navbar brand -->
+        <div class="container flex items-center gap-2 my-4">
+            <img src="img/logo.svg" class="w-10">
+            <h4 class="font-black text-primary">Tailshop.</h4>
+        </div>
+
+        <!-- navbar menu -->
+        <div class="fixed bottom-0 bg-light py-2.5 w-full rounded-t-lg shadow-md">
+            <div class="flex items-center justify-around text-sm">
+                <a href="index.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <small>Home</small>
+                </a>
+                <a href="categories.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <small>Categories</small>
+                </a>
+                <a href="product.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-shirt"></i>
+                    <small>Products</small>
+                </a>
+                <a href="cart.html"
+                    class="py-2 px-5 rounded-lg hover:bg-primary hover:text-light flex flex-col space-y-1 items-center">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <small>Cart Shop</small>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container sm:mb-16 mb-20 sm:my-10 my-3 grid sm:grid-cols-12 grid-cols-1 gap-10">
+        <div class="sm:col-span-5 col-span-1 self-start">
+            <!-- Cart Detail -->
+            <div class="shadow-lg px-4 py-8 rounded-xl">
+                <div class="bg-light w-full rounded">
+                    <h5 class="px-4 py-2 uppercase font-bold tracking-wider flex items-center gap-3">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Detail Cart
+                    </h5>
+                </div>
+
+                <div class="flex flex-col gap-8 mt-8 px-4">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <img src="img/product-bag.jpg" class="rounded-lg w-28">
+                            <div class="text-right">
+                                <h5 class="font-bold mb-0">Rp. 229,000</h5>
+                                <small class="text-gray-400">(1x)</small>
+                            </div>
+                        </div>
+                        <p class="font-bold">
+                            Pinky Woman Bag
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <img src="img/product-watch.jpg" class="rounded-lg w-28">
+                            <div class="text-right">
+                                <h5 class="font-bold mb-0">Rp. 659,000</h5>
+                                <small class="text-gray-400">(1x)</small>
+                            </div>
+                        </div>
+                        <p class="font-bold">
+                            Fossil Elegance Skin
+                        </p>
+                    </div>
+
+                    <table>
+                        <tr class="text-right">
+                            <td>Total</td>
+                            <td>:</td>
+                            <td>Rp. 888,000</td>
+                        </tr>
+                        <tr class="text-right">
+                            <td>Discount</td>
+                            <td>:</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr class="text-right">
+                            <td>Grand Total</td>
+                            <td>:</td>
+                            <td class="text-xl font-bold">Rp. 799,200</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Method Purchase -->
+            <div class="shadow-lg px-4 py-8 rounded-xl mt-10">
+                <div class="bg-light w-full rounded ">
+                    <h5 class="px-4 py-2 uppercase font-bold tracking-wider flex items-center gap-3">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Method Purchase
+                    </h5>
+                </div>
+
+                <div class="flex flex-col gap-5 mt-5 px-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <img src="img/logo-bni.png" class="w-14">
+                            <small>xxxx - xxx - xxx</small>
+                        </div>
+                        <input type="radio" name="method" class="w-4 h-4 accent-primary">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <img src="img/logo-bri.png" class="w-14 h-7">
+                            <small>xxxx - xxxx - xxxx - xxxxx</small>
+                        </div>
+                        <input type="radio" name="method" class="w-4 h-4 accent-primary">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <img src="img/logo-mandiri.png" class="w-24 h-7">
+                            <small>xxxx - xxxx - xxxx</small>
+                        </div>
+                        <input type="radio" name="method" class="w-4 h-4 accent-primary">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Customer -->
+        <div class="sm:col-span-7 col-span-1 self-start shadow-lg px-4 py-8 rounded-xl">
+            <div class="bg-light w-full rounded">
+                <h5 class="px-4 py-2 uppercase font-bold tracking-wider flex items-center gap-3">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    Information Shipping
+                </h5>
+            </div>
+
+            <form action="" method="" class="px-4">
+                <div class="flex sm:flex-row flex-col items-center justify-between sm:gap-4 gap-0">
+                    <div class="my-4 flex flex-col w-full">
+                        <label for="name" class="md:mb-1.5">Full Name</label>
+                        <input type="text"
+                            class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400"
+                            id="name" placeholder="M Irfan Permana">
+                    </div>
+                    <div class="my-4 flex flex-col w-full">
+                        <label for="email" class="md:mb-1.5">Email</label>
+                        <input type="email"
+                            class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400"
+                            id="email" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="my-4 flex flex-col">
+                    <label for="address" class="md:mb-1.5">Address</label>
+                    <textarea
+                        class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400"
+                        id="address" placeholder="Street ..."></textarea>
+                </div>
+                <div class="my-4 flex flex-col">
+                    <label for="provience" class="md:mb-1.5">Province</label>
+                    <select name="" id="provience"
+                        class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400">
+                        <option value="">East Borneo</option>
+                        <option value="">West Borneo</option>
+                        <option value="">South Borneo</option>
+                        <option value="">North Borneo</option>
+                        <option value="">Central Borneo</option>
+                    </select>
+                </div>
+                <div class="flex sm:flex-row flex-col items-center justify-between sm:gap-4 gap-0">
+                    <div class="my-4 flex flex-col w-full">
+                        <label for="subdistrict" class="md:mb-1.5">Subdistrict</label>
+                        <input type="text"
+                            class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400"
+                            id="subdistrict" placeholder="City ...">
+                    </div>
+                    <div class="my-4 flex flex-col w-full">
+                        <label for="postal_code" class="md:mb-1.5">Postal Code</label>
+                        <input type="text"
+                            class="rounded-lg border border-primary px-3.5 py-1.5 focus:outline-none focus:ring focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-not-allowed invalid:border-red-400 invalid:text-red-400 focus:invalid:border-red-400 focus:invalid:ring-red-400"
+                            id="postal_code" placeholder="-">
+                    </div>
+                </div>
+
+                <a href="success.html"
+                    class="sm:px-6 px-4 sm:py-2.5 py-1.5 sm:rounded-lg rounded-md sm:font-medium font-normal transition duration-200 hover:scale-95 inline-flex items-center gap-3 bg-primary text-light">
+                    Checkout Now
+                </a>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer hanya akan tampil khusus pada layar desktop -->
+    <footer class="container mb-5 space-y-5 tracking-wider rounded-t-xl sm:block hidden">
+        <ul class="flex justify-center space-x-7">
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Home</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Categories</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Products</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Login</a>
+            </li>
+            <li>
+                <a href="" class="hover:text-primary transition duration-200">Signup</a>
+            </li>
+        </ul>
+        <div class="flex justify-center space-x-7 text-2xl">
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-instagram-square"></i>
+            </a>
+            <a href="" class="hover:text-primary transition duration-300">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <small class="text-center block">
+            &copy; 2022 <span class="text-primary font-bold">Tailshop</span>, All Rights Reserved.
+        </small>
+    </footer>
+</body>
+
+</html>
